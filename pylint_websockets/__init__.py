@@ -4,7 +4,7 @@ import inspect
 import astroid
 import websockets
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 
 def register(_) -> None:
@@ -16,7 +16,7 @@ def websockets_transform():
     # fmt: off
     lazy_aliases = dict(
     	module
-        .body[3]
+        .body[-1]
         .value  # Lazy load func call
         .keywords[0]  # 'aliases' argument
         .value  # The dict
@@ -24,7 +24,8 @@ def websockets_transform():
     )
     # fmt: on
     output = "from .version import version as __version__  # noqa\n"
-    output += f"__all__ = {[elt.value for elt in module.body[2].value.elts]}\n"
+
+    output += f"__all__ = {[elt.value for elt in module.body[-2].value.elts]}\n"
     for name, path in lazy_aliases.items():
         output += f"from {path.value} import {name.value}\n"
     return astroid.parse(output)

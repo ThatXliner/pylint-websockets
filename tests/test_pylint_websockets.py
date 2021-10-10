@@ -1,5 +1,12 @@
-from pylint_websockets import __version__
+import subprocess
+from pathlib import Path
 
 
-def test_version():
-    assert __version__ == "0.1.0"
+def test_main():
+    process = subprocess.run(
+        ["pylint", "--load-plugins=pylint_websockets", "some_file.py"],
+        capture_output=True,
+        check=False,
+        cwd=Path(__file__).parent,
+    )
+    assert process.returncode == 0, (process.stdout, process.stderr)

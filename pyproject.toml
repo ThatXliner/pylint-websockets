@@ -1,12 +1,15 @@
 [tool.poetry]
 name = "pylint-websockets"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Pylint plugin for the Python websockets library"
 authors = ["Bryan Hu <bryan.hu.2020@gmail.com>"]
+readme = "README.md"
+homepage = "https://github.com/ThatXliner/pylint-pylint-websockets"
 
 [tool.poetry.dependencies]
 python = "^3.7"
 pylint = "*"
+websockets = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"

@@ -4,7 +4,7 @@ version = "0.1.1"
 description = "A Pylint plugin for the Python websockets library"
 authors = ["Bryan Hu <bryan.hu.2020@gmail.com>"]
 readme = "README.md"
-homepage = "https://github.com/ThatXliner/pylint-pylint-websockets"
+homepage = "https://github.com/ThatXliner/pylint-websockets"
 
 [tool.poetry.dependencies]
 python = "^3.7"

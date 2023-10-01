@@ -1,6 +1,6 @@
 # Pylint Websockets
 
-A pylint plugin for websockets
+A pylint plugin for [websockets](https://github.com/python-websockets/websockets) to [fix import errors](https://github.com/python-websockets/websockets/issues/940). **Should no longer be necessary.**
 
 ## Installation
 
